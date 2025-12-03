@@ -1,7 +1,10 @@
-export default function ResetButton({ reset }) {
+import React from 'react'
+
+// Button zum Zurücksetzen aller Scores
+export default function ResetButton({ onClick }) {
   return (
-    <div style={{ marginTop: '20px', textAlign: 'center' }}>
-      <button onClick={reset}>Reset</button>
+    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <button onClick={onClick}>Reset</button>
     </div>
   )
 }

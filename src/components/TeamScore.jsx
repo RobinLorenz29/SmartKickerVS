@@ -1,28 +1,32 @@
-// Diese Komponente zeigt den Punktestand eines Teams und erhöht ihn per Button
-
+// Import von React und Hooks
 import React, { useState, useEffect } from 'react'
 
-// Default Export, damit wir die Komponente in App.jsx importieren können
-export default function TeamScore({ name, resetFlag }) {
-  // useState speichert den aktuellen Score
-  const [score, setScore] = useState(0)
+// Zeigt den Score eines Teams an
+export default function TeamScore({ team }) {
+  const [score, setScore] = useState(0) // Aktueller Score
 
-  // useEffect wird benutzt, um den Score zurückzusetzen,
-  // wenn sich resetFlag ändert
+  // Lädt alle 1 Sekunde den Score vom Backend
   useEffect(() => {
-    setScore(0) // Score zurücksetzen
-  }, [resetFlag]) // Läuft jedes Mal, wenn resetFlag sich ändert
+    const fetchScore = async () => {
+      try {
+        const response = await fetch("http://localhost:5173/api/counter")
+        const data = await response.json()
+        setScore(data[team]) // Score für das richtige Team setzen
+      } catch (error) {
+        console.error("Fehler beim Laden des Scores:", error)
+      }
+    }
+
+    fetchScore() // direkt beim Start
+    const interval = setInterval(fetchScore, 1000) // alle 1 Sekunde
+
+    return () => clearInterval(interval) // Aufräumen
+  }, [team])
 
   return (
-    <div style={{ margin: '20px', textAlign: 'center'}}>
-      {/* Zeige den Teamnamen */}
-      <h2>{name}</h2>
-      {/* Zeige den aktuellen Score */}
+    <div style={{ margin: '20px', textAlign: 'center' }}>
+      <h2>{team === "team1" ? "Team 1" : "Team 2"}</h2>
       <p style={{ fontSize: '40px' }}>{score}</p>
-      {/* Button, um den Score zu erhöhen */}
-      <button onClick={() => setScore(score + 1)}>+1</button>
-      {/* -1 Button und Score fällt nicht unter 0 */}
-      <button onClick={() => setScore(Math.max(0, score - 1))}>-1</button>
     </div>
   )
 }
