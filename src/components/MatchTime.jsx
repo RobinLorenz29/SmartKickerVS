@@ -7,7 +7,7 @@ export default function MatchTime() {
   useEffect(() => {
     const fetchTime = async () => {
       try {
-        const response = await fetch("http://localhost:5173/api/time")
+        const response = await fetch("http://localhost:7890/api/time")
         const data = await response.json()
         setTime(data.time) // Beispiel: { "time": "12:34" }
       } catch (error) {
