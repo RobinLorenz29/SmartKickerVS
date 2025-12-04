@@ -1,10 +1,19 @@
-import React from 'react'
+// Minus-Button für Team B
 
-// Minus-Button für Team 2
-export default function TeamBMinusButton({ onClick }) {
-  return (
-    <div style={{ textAlign: 'center', marginTop: '10px' }}>
-      <button onClick={onClick}>Team B -1</button>
-    </div>
-  )
+import React from "react"
+
+export default function TeamBMinusButton() {
+  const decrease = async () => {
+    try {
+      await fetch("http://localhost:7890/api/matches/current/correct/teamBe", {
+        method: "POST"
+      })
+    } catch (err) {
+      console.error("TeamB - Fehler:", err)
+    }
+  }
+
+  return <button onClick={decrease}>- Team B</button>
 }
+
+

@@ -1,37 +1,35 @@
-// Import von React und Hooks
-import React, { useState, useEffect } from 'react'
+// TeamScore.jsx – Holt den Score eines Teams vom Backend
 
-// Zeigt den Score eines Teams an
-export default function TeamScore({ team, resetFlag }) {
-  const [score, setScore] = useState(0) // Aktueller Score
+import React, { useState, useEffect } from "react"
 
-  // Lädt alle 1 Sekunde den Score vom Backend
+export default function TeamScore({ team }) {
+  const [score, setScore] = useState(0)
+
+  // Holt alle 1 Sek den State vom Backend
   useEffect(() => {
-    const fetchScore = async () => {
+    const loadScore = async () => {
       try {
-        const response = await fetch("http://localhost:7890/api/matches/current")
-        const data = await response.json()
-        setScore(team === "teamA" ? data.goalTeamA : data.goalTeamB) // Score für das richtige Team setzen
+        const res = await fetch("http://localhost:7890/api/matches/current")
+        const data = await res.json()
+
+        // Score auslesen je nach Team
+        if (team === "teamA") setScore(data.teamA.goals)
+        if (team === "teamB") setScore(data.teamB.goals)
+
       } catch (error) {
-        console.error("Fehler beim Laden des Scores:", error)
+        console.error("Score Fehler:", error)
       }
     }
 
-    fetchScore() // direkt beim Start
-    const interval = setInterval(fetchScore, 1000) // alle 1 Sekunde
-
-    return () => clearInterval(interval) // Aufräumen
+    loadScore()
+    const interval = setInterval(loadScore, 1000)
+    return () => clearInterval(interval)
   }, [team])
 
-  // Score zurücksetzen, wenn resetFlag sich ändert
-  useEffect(() => {
-    setScore(0)
-  }, [resetFlag])
-
   return (
-    <div style={{ margin: '20px', textAlign: 'center' }}>
+    <div style={{ textAlign: "center", margin: "20px" }}>
       <h2>{team === "teamA" ? "Team A" : "Team B"}</h2>
-      <p style={{ fontSize: '40px' }}>{score}</p>
+      <p style={{ fontSize: "40px" }}>{score}</p>
     </div>
   )
 }

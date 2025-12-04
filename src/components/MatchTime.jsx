@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 
 // Zeigt die aktuelle Spielzeit an
 export default function MatchTime() {
-  const [time, setTime] = useState("00:00")
+  const [duration, setTime] = useState("00:00")
 
   useEffect(() => {
     const fetchTime = async () => {
       try {
-        const response = await fetch("http://localhost:7890/api/time")
+        const response = await fetch("http://localhost:7890/api/matches/current")
         const data = await response.json()
-        setTime(data.time) // Beispiel: { "time": "12:34" }
+        setTime(data.duration) // Beispiel: { "time": "12:34" }
       } catch (error) {
         console.error("Fehler beim Laden der Zeit:", error)
       }
@@ -22,7 +22,7 @@ export default function MatchTime() {
 
   return (
     <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-      <h3>Spielzeit: {time}</h3>
+      <h3>Spielzeit: {duration}</h3>
     </div>
   )
 }
