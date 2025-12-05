@@ -10,6 +10,7 @@ export default function WinnerPage() {
   const [winner, setWinner] = useState("")
   const [scoreA, setScoreA] = useState(0)
   const [scoreB, setScoreB] = useState(0)
+  const [duration, setDuration] = useState(0)
 
   // Lädt die finalen Daten vom Backend beim Laden der Seite
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function WinnerPage() {
         setWinner(data.winner)
         setScoreA(data.goalTeamA)
         setScoreB(data.goalTeamB)
+        setDuration(data.duration)
       } catch (err) {
         console.error("Fehler beim Laden der Gewinnerdaten:", err)
       }
@@ -51,6 +53,9 @@ export default function WinnerPage() {
 
       {/* Gewinner anzeigen */}
       <h2>Gewonnen: {winner}</h2>
+
+      {/*Gespielte Zeit anzeigen */}
+      <p style={{frontSize: "25px" }}>Spielzeit: {duration}</p>
 
       {/* Endstand anzeigen */}
       <p style={{ fontSize: "30px" }}>Endstand: Team A {scoreA} : Team B {scoreB}</p>
