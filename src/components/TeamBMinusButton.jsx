@@ -5,7 +5,7 @@ import React from "react"
 export default function TeamBMinusButton() {
   const decrease = async () => {
     try {
-      await fetch("http://localhost:7890/api/matches/current/correct/teamBe", {
+      await fetch("http://localhost:7890/api/matches/current/correct/teamB", {
         method: "PUT"
       })
     } catch (err) {
