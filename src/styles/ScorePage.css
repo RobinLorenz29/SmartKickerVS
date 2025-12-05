@@ -1,54 +1,71 @@
-/* Grund-Layout */
+/* Gesamt-Container der Seite */
 .score-page {
   display: flex;
-  flex-direction: column;
-  height: 100vh; /* Ganze Höhe der Seite */
-  font-family: Arial, sans-serif;
-}
-
-/* Header: Titel + Zeit */
-.score-header {
+  flex-direction: column; /* Alles von oben nach unten stapeln */
+  min-height: 100vh; /* Höhe = Bildschirmhöhe */
   text-align: center;
-  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #c51e1e; /* dunkler Hintergrund */
+  color: #fff; /* weiße Schrift */
+  padding: 20px;
 }
 
-/* Main Bereich: Teams + Doppelpunkt */
+/* Header: Titel + Spielzeit */
+.score-header {
+  margin-bottom: 40px; /* Abstand nach unten */
+}
+
+.score-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+/* Main-Bereich: Linkes Team, Doppelpunkt, rechtes Team */
 .score-main {
   display: flex;
-  flex: 1; /* Hauptbereich füllt den Platz */
-  justify-content: center; /* Zentriert horizontal */
-  align-items: center; /* Zentriert vertikal */
-  gap: 100px; /* Abstand zwischen Teams und Doppelpunkt */
+  justify-content: center; /* Teams + Doppelpunkt horizontal zentrieren */
+  align-items: center;     /* Vertikal zentrieren */
+  gap: 80px; /* Abstand zwischen linken Team, Doppelpunkt, rechtes Team */
+  margin-bottom: 50px;
 }
 
-/* Team Container */
+/* Team-Container */
 .team {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Teamname, Score, Button untereinander */
   align-items: center;
 }
 
-/* Score Box */
+/* Score-Box */
 .score-box {
-  background-color: #222;
-  color: #fff;
+  background-color: #333; /* dunkler Kasten hinter Score */
   padding: 20px 40px;
-  border-radius: 15px;
-  font-size: 48px;
-  margin: 10px 0;
-  min-width: 100px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 12px; /* abgerundete Ecken */
+  margin: 10px 0; /* Abstand über und unter Score */
+  border: 2px solid #000; /* schwarzer Rand */
 }
 
-/* Doppelpunkt */
+/* Doppelpunkt zwischen den Teams */
 .score-divider {
-  font-size: 60px;
+  font-size: 10em;
   font-weight: bold;
 }
 
-/* Footer Reset Button */
+/* Footer für Reset-Button */
 .score-footer {
-  text-align: center;
-  margin-bottom: 20px;
+  margin-top: auto; /* ganz unten auf der Seite */
+}
+
+/* Buttons können zusätzlich eigene Styles haben */
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
 }
