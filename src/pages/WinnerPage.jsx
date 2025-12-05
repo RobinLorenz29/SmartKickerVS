@@ -55,7 +55,7 @@ export default function WinnerPage() {
       <h2>Gewonnen: {winner}</h2>
 
       {/*Gespielte Zeit anzeigen */}
-      <p style={{frontSize: "25px" }}>Spielzeit: {duration}</p>
+      <p style={{fontSize: "25px" }}>Spielzeit: {duration}</p>
 
       {/* Endstand anzeigen */}
       <p style={{ fontSize: "30px" }}>Endstand: Team A {scoreA} : Team B {scoreB}</p>
