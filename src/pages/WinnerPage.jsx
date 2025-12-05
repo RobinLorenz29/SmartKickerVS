@@ -10,7 +10,7 @@ export default function WinnerPage() {
   const [winner, setWinner] = useState("")
   const [scoreA, setScoreA] = useState(0)
   const [scoreB, setScoreB] = useState(0)
-  const [duration, setDuration] = useState(0)
+  const [duration, setDuration] = useState("00:00")
 
   // Lädt die finalen Daten vom Backend beim Laden der Seite
   useEffect(() => {
