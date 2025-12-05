@@ -8,8 +8,9 @@ export default function ResetButton() {
 
   const reset = async () => {
     try {
-      await fetch("http://localhost:7890/api/matches//current/reset", {
-        method: "POST"
+      // Backend-Reset aufrufen
+      await fetch("http://localhost:7890/api/matches/current/reset", {
+        method: "PUT"
       })
     } catch (err) {
       console.error("Reset Fehler:", err)
@@ -18,5 +19,9 @@ export default function ResetButton() {
     navigate("/") // zurück zur Startseite
   }
 
-  return <button onClick={reset}>Reset</button>
+  return (
+    <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <button onClick={reset}>Reset</button>
+    </div>
+  )
 }

@@ -6,7 +6,7 @@ export default function TeamBMinusButton() {
   const decrease = async () => {
     try {
       await fetch("http://localhost:7890/api/matches/current/correct/teamBe", {
-        method: "POST"
+        method: "PUT"
       })
     } catch (err) {
       console.error("TeamB - Fehler:", err)

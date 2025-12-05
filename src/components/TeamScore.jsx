@@ -9,12 +9,12 @@ export default function TeamScore({ team }) {
   useEffect(() => {
     const loadScore = async () => {
       try {
-        const res = await fetch("http://localhost:7890/api/matches/current")
-        const data = await res.json()
+        const response = await fetch("http://localhost:7890/api/matches/current")
+        const data = await response.json()
 
         // Score auslesen je nach Team
-        if (team === "teamA") setScore(data.teamA.goals)
-        if (team === "teamB") setScore(data.teamB.goals)
+        if (team === "teamA") setScore(data.goalTeamA)
+        if (team === "teamB") setScore(data.goalTeamB)
 
       } catch (error) {
         console.error("Score Fehler:", error)
