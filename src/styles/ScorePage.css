@@ -1,18 +1,30 @@
 /* Gesamt-Container der Seite */
+/* Entfernt Standard-Margin und Padding vom Browser */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* optional, falls nötig für volle Höhe */
+  background-color: #1a1a1a; /* damit die Seite komplett dunkel ist */
+}
+
 .score-page {
   display: flex;
   flex-direction: column; /* Alles von oben nach unten stapeln */
   min-height: 100vh; /* Höhe = Bildschirmhöhe */
   text-align: center;
   font-family: Arial, sans-serif;
-  background-color: #c51e1e; /* dunkler Hintergrund */
+  background-color: #1a1a1a; /* dunkler Hintergrund */
   color: #fff; /* weiße Schrift */
-  padding: 20px;
+  padding: 10px;
+  box-sizing: border-box; /* berücksichtigt Padding in Höhe */
 }
 
 /* Header: Titel + Spielzeit */
 .score-header {
-  margin-bottom: 40px; /* Abstand nach unten */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px; /* Abstand nach unten */
 }
 
 .score-header h1 {
@@ -25,7 +37,7 @@
   display: flex;
   justify-content: center; /* Teams + Doppelpunkt horizontal zentrieren */
   align-items: center;     /* Vertikal zentrieren */
-  gap: 80px; /* Abstand zwischen linken Team, Doppelpunkt, rechtes Team */
+  gap: 100px; /* Abstand zwischen linken Team, Doppelpunkt, rechtes Team */
   margin-bottom: 50px;
 }
 
@@ -34,6 +46,7 @@
   display: flex;
   flex-direction: column; /* Teamname, Score, Button untereinander */
   align-items: center;
+  
 }
 
 /* Score-Box */
@@ -43,17 +56,19 @@
   border-radius: 12px; /* abgerundete Ecken */
   margin: 10px 0; /* Abstand über und unter Score */
   border: 2px solid #000; /* schwarzer Rand */
+  min-width: 100px; /* gleiche Breite für beide Teams */
 }
 
 /* Doppelpunkt zwischen den Teams */
 .score-divider {
-  font-size: 10em;
+  font-size: 3em;
   font-weight: bold;
 }
 
 /* Footer für Reset-Button */
 .score-footer {
-  margin-top: auto; /* ganz unten auf der Seite */
+  margin-top: auto; 
+  margin-bottom: 120px; /* Abstand vom unteren Rand */
 }
 
 /* Buttons können zusätzlich eigene Styles haben */

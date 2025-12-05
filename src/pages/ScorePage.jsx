@@ -7,6 +7,7 @@ import TeamAMinusButton from "../components/TeamAMinusButton.jsx"
 import TeamBMinusButton from "../components/TeamBMinusButton.jsx"
 import ResetButton from "../components/ResetButton.jsx"
 import MatchTime from "../components/MatchTime.jsx"
+import "../styles/ScorePage.css"
 
 export default function ScorePage() {
   const navigate = useNavigate()
@@ -42,7 +43,6 @@ export default function ScorePage() {
       <main className="score-main">
         {/* Team A */}
         <div className="team team-left">
-          <h2>Team A</h2>
           <div className="score-box">
             <TeamScore team="teamA" />
           </div>
@@ -54,7 +54,6 @@ export default function ScorePage() {
 
         {/* Team B */}
         <div className="team team-right">
-          <h2>Team B</h2>
           <div className="score-box">
             <TeamScore team="teamB" />
           </div>
