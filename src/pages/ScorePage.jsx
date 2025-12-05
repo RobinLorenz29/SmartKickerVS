@@ -20,7 +20,7 @@ export default function ScorePage() {
 
         // Wenn Match beendet, zur Gewinnerseite wechseln
         if (data.status === "FINISHED") {
-          navigate("/winner", { state: { winner: data.winner, scoreA: data.goalTeamA, scoreB: data.goalTeamB } })
+          navigate("/winner")
         }
       } catch (err) {
         console.error("Fehler beim Abrufen des Matchstatus:", err)
