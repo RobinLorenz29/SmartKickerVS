@@ -31,22 +31,41 @@ export default function ScorePage() {
   }, [navigate])
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>SmartKicker Scoreboard</h1>
+    <div className="score-page">
+      {/* Header: Titel + Match-Zeit */}
+      <header className="score-header">
+        <h1>SmartKicker</h1>
+        <MatchTime />
+      </header>
 
-      {/* Match-Zeit */}
-      <MatchTime />
+      {/* Main: Team A links, Doppelpunkt mittig, Team B rechts */}
+      <main className="score-main">
+        {/* Team A */}
+        <div className="team team-left">
+          <h2>Team A</h2>
+          <div className="score-box">
+            <TeamScore team="teamA" />
+          </div>
+          <TeamAMinusButton />
+        </div>
 
-      {/* Zeigt die Scores */}
-      <TeamScore team="teamA" />
-      <TeamScore team="teamB" />
+        {/* Doppelpunkt */}
+        <div className="score-divider">:</div>
 
-      {/* Minus-Buttons für beide Teams */}
-      <TeamAMinusButton />
-      <TeamBMinusButton />
+        {/* Team B */}
+        <div className="team team-right">
+          <h2>Team B</h2>
+          <div className="score-box">
+            <TeamScore team="teamB" />
+          </div>
+          <TeamBMinusButton />
+        </div>
+      </main>
 
-      {/* Reset-Button */}
-      <ResetButton />
+      {/* Footer: Reset-Button */}
+      <footer className="score-footer">
+        <ResetButton />
+      </footer>
     </div>
   )
 }

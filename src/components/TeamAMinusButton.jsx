@@ -1,6 +1,7 @@
 // Minus-Button für Team A
 
 import React from "react"
+import "../styles/TeamAMinusButton.css"
 
 export default function TeamAMinusButton() {
   const decrease = async () => {
@@ -13,6 +14,6 @@ export default function TeamAMinusButton() {
     }
   }
 
-  return <button onClick={decrease}>- Team A</button>
+  return <button className = "btn-teamA" onClick={decrease}>- Team A</button>
 }
 

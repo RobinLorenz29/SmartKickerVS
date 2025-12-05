@@ -2,6 +2,7 @@
 
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import "../styles/ResetButton.css"
 
 export default function ResetButton() {
   const navigate = useNavigate()
@@ -21,7 +22,7 @@ export default function ResetButton() {
 
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
-      <button onClick={reset}>Reset</button>
+      <button className="btn-reset" onClick={reset}>Reset</button>
     </div>
   )
 }

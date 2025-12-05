@@ -1,0 +1,19 @@
+/* Grundstil des Buttons */
+.btn-reset {
+  position: relative; /* nötig für mögliche Effekte oder Pseudo-Elemente */
+  background: rgb(22, 9, 240); /* Startfarbe */
+  background: linear-gradient(0deg, rgb(240, 32, 5) 0%, rgb(218, 97, 88) 100%); /* Verlauf */
+  color: #fff; /* Textfarbe */
+  border: 2px solid #000; /* schwarzer Rand um den Button */
+  border-radius: 5px; /* abgerundete Ecken */
+  padding: 10px 20px; /* innen Abstand oben/unten & links/rechts */
+  transition: all 0.2s ease; /* sanfte Übergänge bei Effekten */
+  overflow: hidden; /* verhindert, dass Effekte über den Button hinausgehen */
+}
+
+/* Effekt beim Drücken des Buttons */
+.btn-reset:active {
+  transform: scale(0.95); /* Button schrumpft leicht beim Drücken */
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* innerer Schatten für "gedrückt"-Look */
+  background: rgba(22, 9, 240, 0.8); /* Hintergrund leicht abdunkeln */
+}
