@@ -1,0 +1,58 @@
+/* Zentrale Seitenstruktur */
+.score-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background: white;
+  color: black;
+  padding: 20px;
+}
+
+/* Header */
+.score-header {
+  margin-bottom: 30px;
+}
+
+.score-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+/* Hauptbereich: Links – Mitte – Rechts */
+.score-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* Abstand zwischen Team A – : – Team B */
+  margin-top: 40px;
+}
+
+/* Team-Container */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Score-Box */
+.score-box {
+  background: #f0f0f0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px 40px;
+  margin: 15px 0;
+  min-width: 100px;
+}
+
+/* Doppelpunkt */
+.score-divider {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* Footer */
+.score-footer {
+  margin-top: 60px;
+}

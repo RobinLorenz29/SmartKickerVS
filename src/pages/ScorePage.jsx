@@ -7,6 +7,7 @@ import TeamAMinusButton from "../components/TeamAMinusButton.jsx"
 import TeamBMinusButton from "../components/TeamBMinusButton.jsx"
 import ResetButton from "../components/ResetButton.jsx"
 import MatchTime from "../components/MatchTime.jsx"
+import "../styles/ScorePage.css"
 
 export default function ScorePage() {
   const navigate = useNavigate()
@@ -31,22 +32,39 @@ export default function ScorePage() {
   }, [navigate])
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>SmartKicker Scoreboard</h1>
+    <div className="score-page">
+      {/* Header: Titel + Match-Zeit */}
+      <header className="score-header">
+        <h1>SmartKicker</h1>
+        <MatchTime />
+      </header>
 
-      {/* Match-Zeit */}
-      <MatchTime />
+      {/* Hauptbereich: Team A – Doppelpunkt – Team B */}
+      <main className="score-main">
+        {/* Team A */}
+        <div className="team team-left">
+          <div className="score-box">
+            <TeamScore team="teamA" />
+          </div>
+          <TeamAMinusButton />
+        </div>
 
-      {/* Zeigt die Scores */}
-      <TeamScore team="teamA" />
-      <TeamScore team="teamB" />
+        {/* Doppelpunkt in der Mitte */}
+        <div className="score-divider">:</div>
 
-      {/* Minus-Buttons für beide Teams */}
-      <TeamAMinusButton />
-      <TeamBMinusButton />
+        {/* Team B */}
+        <div className="team team-right">
+          <div className="score-box">
+            <TeamScore team="teamB" />
+          </div>
+          <TeamBMinusButton />
+        </div>
+      </main>
 
-      {/* Reset-Button */}
-      <ResetButton />
+      {/* Footer: Reset-Button */}
+      <footer className="score-footer">
+        <ResetButton />
+      </footer>
     </div>
   )
 }
