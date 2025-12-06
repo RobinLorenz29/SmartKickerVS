@@ -61,7 +61,7 @@ export default function WinnerPage() {
       <p style={{ fontSize: "30px" }}>Endstand: Team A {scoreA} : Team B {scoreB}</p>
 
       {/* Home-Button zum Reset */}
-      <button onClick={goHome}>Home</button>
+      <button onClick={goHome}style={{backgroundColor: "#833fdbff"}}>Home</button>
     </div>
   )
 }

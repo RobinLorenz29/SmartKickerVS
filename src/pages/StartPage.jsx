@@ -17,7 +17,7 @@ export default function StartPage() {
   return (
     <div style={{textAlign:"center", marginTop:"100px"}}>
       <h1>SmartKicker</h1>
-      <button onClick={startMatch} style={{fontSize:"30px", padding:"20px"}}>
+      <button onClick={startMatch} style={{fontSize:"30px", padding:"20px",backgroundColor: "#833fdbff"}}>
         Match starten
       </button>
     </div>

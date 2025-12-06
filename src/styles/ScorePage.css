@@ -4,7 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%; /* optional, falls nötig für volle Höhe */
-  background-color: #1a1a1a; /* damit die Seite komplett dunkel ist */
+  
 }
 
 .score-page {
@@ -46,6 +46,7 @@ html, body {
   display: flex;
   flex-direction: column; /* Teamname, Score, Button untereinander */
   align-items: center;
+  margin-top: 50px;
   
 }
 

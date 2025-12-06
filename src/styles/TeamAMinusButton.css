@@ -1,8 +1,8 @@
 /* Grundstil des Buttons */
 .btn-teamA {
   position: relative; /* nötig für mögliche Effekte oder Pseudo-Elemente */
-  background: rgb(22, 9, 240); /* Startfarbe */
-  background: linear-gradient(0deg, rgba(22,9,240,1) 0%, rgba(49,110,244,1) 100%); /* Verlauf */
+  background: rgb(82, 7, 133); /* Startfarbe */
+  background: linear-gradient(0deg, rgb(82, 7, 133) 0%, rgb(126, 6, 110) 100%); /* Verlauf */
   color: #fff; /* Textfarbe */
   border: 2px solid #000; /* schwarzer Rand um den Button */
   border-radius: 5px; /* abgerundete Ecken */
@@ -15,5 +15,5 @@
 .btn-teamA:active {
   transform: scale(0.95); /* Button schrumpft leicht beim Drücken */
   box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* innerer Schatten für "gedrückt"-Look */
-  background: rgba(22, 9, 240, 0.8); /* Hintergrund leicht abdunkeln */
+  background: rgba(82, 7, 133, 0.8); /* Hintergrund leicht abdunkeln */
 }
