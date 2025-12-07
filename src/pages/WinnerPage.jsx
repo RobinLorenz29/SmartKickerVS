@@ -52,13 +52,13 @@ export default function WinnerPage() {
       <h1>Spiel beendet!</h1>
 
       {/* Gewinner anzeigen */}
-      <h2>Gewonnen: {winner}</h2>
+      <h2>Gewinner: {winner}</h2>
 
       {/*Gespielte Zeit anzeigen */}
       <p style={{fontSize: "25px" }}>Spielzeit: {duration}</p>
 
       {/* Endstand anzeigen */}
-      <p style={{ fontSize: "30px" }}>Endstand: Team A {scoreA} : Team B {scoreB}</p>
+      <p style={{ fontSize: "30px" }}>Endstand: Team A {scoreA} :  {scoreB} Team B</p>
 
       {/* Home-Button zum Reset */}
       <button onClick={goHome}>Home</button>
